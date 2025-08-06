@@ -1,0 +1,15 @@
+<svg width="1000" height="100" viewBox="0 0 1000 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="LCARS_Header">
+<mask id="mask0_3_32" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="100">
+<path id="head_clip" d="M0 0H103.573V33.1169C103.573 66.2338 155.722 66.2338 155.722 66.2338H1000V100H51.4245C51.4245 100 0 100 0 66.2338V0Z" fill="black"/>
+</mask>
+<g mask="url(#mask0_3_32)">
+<rect id="lcars_obj-22" width="103.573" height="30.5195" fill="#8A7BFF"/>
+<rect id="lcars_obj-21" y="35.7143" width="413.569" height="64.2857" fill="#8A7BFF"/>
+<rect id="lcars_obj-20" x="419.363" y="66.2338" width="46.3545" height="33.7662" fill="#FD6900"/>
+<rect id="lcars_obj-19" x="471.512" y="66.2338" width="202.801" height="33.7662" fill="#FB8EFE"/>
+<rect id="lcars_obj-18" x="680.107" y="66.2338" width="191.936" height="33.7662" fill="#FB8EFE"/>
+<rect id="lcars_obj-17" x="877.838" y="66.2338" width="122.405" height="33.7662" fill="#FF8A8B"/>
+</g>
+</g>
+</svg>

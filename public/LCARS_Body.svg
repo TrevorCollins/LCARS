@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="LCARS_Body">
+    <mask id="mask0_3_33" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1000">
+      <path id="body_clip" d="M1000 0V84.7059H156.333C156.333 84.7059 104.222 85.8824 104.222 144.706V880C104.222 940 156.333 940 156.333 940H1000V1000H52.111C52.111 1000 0.723756 1000 0.723742 940C0.723731 889.548 -5.6657e-06 120 0 60C5.66577e-06 0 52.111 0 52.111 0H1000Z" fill="black" style="fill:black;fill-opacity:1;"/>
+    </mask>
+    <g mask="url(#mask0_3_33)">
+      <rect id="lcars_obj-16" x="81.56%" y="94.0%" width="18.45%" height="60.0%" fill="#FF964E"/>
+      <rect id="lcars_obj-15" x="45.09%" y="94.0%" width="35.89%" height="60.0%" fill="#8A7BFF"/>
+      <rect id="lcars_obj-14" x="29.45%" y="94.0%" width="15.05%" height="60.0%" fill="#FF8A8B"/>
+      <rect id="lcars_obj-13" x="22.14%" y="94.0%" width="6.73%" height="60.0%" fill="#FD6900"/>
+      <rect id="lcars_obj-12" x="00.0%" y="82.35%" width="21.56%" height="17.64%" fill="#FF964E"/>
+      <rect id="lcars_obj-11" x="00.0%" y="40.23%" width="10.42%" height="41.17%" fill="#FF964E"/>
+      <rect id="lcars_obj-10" x="00.0%" y="34.23%" width="10.42%" height="5.05%" fill="#FD6900"/>
+      <rect id="lcars_obj-09" x="00.0%" y="22.11%" width="10.42%" height="11.17%" fill="#FF8A8B"/>
+      <rect id="lcars_obj-08" x="00.0%" y="00.0%" width="25.76%" height="21.17%" fill="#FF8A8B"/>
+      <rect id="lcars_obj-07" x="26.34%" y="00.0%" width="15.05%" height="8.47%" fill="#FB8EFE"/>
+      <rect id="lcars_obj-06" x="41.97%" y="00.0%" width="4.63%" height="8.47%" fill="#FD6900"/>
+      <rect id="lcars_obj-05" x="47.18%" y="00.0%" width="15.05%" height="3.64%" fill="#FF964E"/>
+      <rect id="lcars_obj-04" x="62.82%" y="00.0%" width="9.84%" height="8.47%" fill="#FF964E"/>
+      <rect id="lcars_obj-03" x="73.24%" y="00.0%" width="6.65%" height="8.47%" fill="#FB8EFE"/>
+      <rect id="lcars_obj-02" x="80.48%" y="00.0%" width="6.73%" height="8.47%" fill="#FB8EFE"/>
+      <rect id="lcars_obj-01" x="87.79%" y="00.0%" width="12.23%" height="8.47%" fill="#FF8A8B"/>
+    </g>
+  </g>
+</svg>
