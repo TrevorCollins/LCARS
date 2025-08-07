@@ -9,8 +9,8 @@ export const gsapAnimations = () => {
 			autoAlpha: 0,
 			y: 'random([-200, 200])',
 			stagger: {
-				each: 0.1,
-				amount: 0.5,
+				each: 0.05,
+				amount: 0.3,
 				from: 'random',
 				ease: 'power2.inOut',
 			},
@@ -28,7 +28,7 @@ export const gsapAnimations = () => {
 						ease: 'power4.in',
 						stagger: {
 							each: 0,
-							amount: 1,
+							amount: 0.5,
 						},
 					}
 				);
@@ -54,7 +54,7 @@ export const gsapAnimations = () => {
 				autoAlpha: 0,
 				scaleY: 0,
 				scaleX: 0.5,
-				duration: 1,
+				duration: 0.5,
 			},
 			'<'
 		);
