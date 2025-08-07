@@ -3,7 +3,7 @@ import Card from '../../../components/Card';
 const Bio = ({ ...props }) => {
 	return (
 		<Card header='Bio' id='bio' {...props}>
-			<div className='flex flex-row justify-between gap-4 w-full h-full'>
+			<div className='flex flex-col xl:flex-row justify-between gap-4 w-full h-1/2'>
 				<img src='/profile.jpeg' alt='Trevor' className='bio__image' />
 				<div className='bio__info'>
 					<div className='bio__line'>
@@ -27,6 +27,7 @@ const Bio = ({ ...props }) => {
 					</div>
 				</div>
 			</div>
+			<div className='w-full h-1/2'>paragraph</div>
 		</Card>
 	);
 };

@@ -9,8 +9,8 @@ export const gsapAnimations = () => {
 			autoAlpha: 0,
 			y: 'random([-200, 200])',
 			stagger: {
-				each: 0.2,
-				amount: 1,
+				each: 0.1,
+				amount: 0.5,
 				from: 'random',
 				ease: 'power2.inOut',
 			},
@@ -28,7 +28,7 @@ export const gsapAnimations = () => {
 						ease: 'power4.in',
 						stagger: {
 							each: 0,
-							amount: 1.5,
+							amount: 1,
 						},
 					}
 				);
@@ -41,11 +41,22 @@ export const gsapAnimations = () => {
 			repeatDelay: 1,
 			duration: 0.01,
 			repeat: -1,
+			ease: 'power4.in',
 			stagger: {
+				each: 0,
 				amount: 1,
 				from: 'center',
-				ease: 'none',
 			},
 		});
+		tl.from(
+			'main',
+			{
+				autoAlpha: 0,
+				scaleY: 0,
+				scaleX: 0.5,
+				duration: 1,
+			},
+			'<'
+		);
 	});
 };

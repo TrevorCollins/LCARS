@@ -68,7 +68,7 @@ const Skill = ({ label, percent, color }: SkillType) => {
 const Skills = ({ ...props }) => {
 	return (
 		<Card id='skills' header='Skills' {...props}>
-			<div className='skills__body h-full overflow-y-auto overscroll-none'>
+			<div className='skills__body h-full '>
 				{skillsArr.map(skill => (
 					<Skill key={skill.label} {...skill} />
 				))}
