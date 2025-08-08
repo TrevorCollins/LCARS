@@ -1,4 +1,4 @@
-import type { JobType, SkillType } from '../types';
+import type { JobType, ProjectType, SkillType } from '../types';
 
 export const skillsArr: SkillType[] = [
 	{
@@ -124,6 +124,9 @@ export const skillSorts = [
 	{ label: 'Name', value: 'label' },
 ];
 
+export const bioCopy =
+	'I am a full stack web developer with an eye for the front-end user experience and a solid understanding of backend frameworks. My passion for Coding combined with my experience in graphic design, photography, and music provide  a foundation for creative problem-solving. I bring a Midwest work ethic and a penchant for technology to all of my endeavors.';
+
 export const workHistory: JobType[] = [
 	{
 		id: 'kvc',
@@ -173,5 +176,38 @@ export const workHistory: JobType[] = [
 	},
 ];
 
-export const bioCopy =
-	'I am a full stack web developer with an eye for the front-end user experience and a solid understanding of backend frameworks. My passion for Coding combined with my experience in graphic design, photography, and music provide  a foundation for creative problem-solving. I bring a Midwest work ethic and a penchant for technology to all of my endeavors.';
+export const projects: ProjectType[] = [
+	{
+		id: 'greg-tracy-violins',
+		name: 'Greg Tracy Violins',
+		url: 'https://gregtracyviolins.com',
+		repo: 'greg-tracy-violins',
+		thumbnail: 'greg-tracy-violins',
+		description: 'A portfolio site for a violin maker and restorer in Pittsburgh, PA. (still under construction)',
+	},
+	{
+		id: 'costar',
+		name: 'Costar',
+		url: 'https://costar.com',
+		repo: 'costar',
+		thumbnail: 'costar',
+		description:
+			'"How many movies has John Cusack worked on with his sister Joan?" "What was that one show with Jean Smart and Jemaine Clement?" These questions have plagued me for years. This app was my solution.',
+	},
+	{
+		id: 'grace-portfolio',
+		name: 'Grace Snyder Photography',
+		url: 'https://gracesnyder.com',
+		repo: 'grace-portfolio',
+		thumbnail: 'grace-portfolio',
+		description: 'A portfolio site for a photographer in Kansas City, MO. Probably the best photographer in Kansas City. I might be biased though; she is my wife.',
+	},
+	{
+		id: 'lcars',
+		name: 'LCARS Portfolio',
+		url: 'https://trevorcollins.me',
+		repo: 'lcars',
+		thumbnail: 'lcars',
+		description: 'The site you are on right now!',
+	},
+];

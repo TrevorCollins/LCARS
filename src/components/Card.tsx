@@ -5,7 +5,7 @@ type CardProps = {
 	children: ReactNode;
 	id: string;
 	subHead?: string;
-	rightItems?: string[];
+	rightItems?: ReactNode[];
 	className?: string;
 };
 
@@ -17,7 +17,7 @@ const Card = ({ title, children, id, subHead, rightItems, className }: CardProps
 					<h3>{title}</h3>
 					{subHead && <span className='card__sub-head'>{` - ${subHead}`}</span>}
 				</div>
-				<div className='card__right-items'>{rightItems && rightItems.map((sh, idx) => <p key={idx}>{sh}</p>)}</div>
+				<div className='card__right-items'>{rightItems && rightItems.map((item, idx) => <div key={idx}>{item}</div>)}</div>
 			</div>
 			<div className='card__body'>{children}</div>
 		</section>

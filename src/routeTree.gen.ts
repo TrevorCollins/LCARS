@@ -12,9 +12,9 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TimelineIndexRouteImport } from './routes/timeline/index'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects/$projectId'
 
+const TimelineIndexLazyRouteImport = createFileRoute('/timeline/')()
 const ProjectsIndexLazyRouteImport = createFileRoute('/projects/')()
 const AboutIndexLazyRouteImport = createFileRoute('/about/')()
 
@@ -23,6 +23,13 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TimelineIndexLazyRoute = TimelineIndexLazyRouteImport.update({
+  id: '/timeline/',
+  path: '/timeline/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/timeline/index.lazy').then((d) => d.Route),
+)
 const ProjectsIndexLazyRoute = ProjectsIndexLazyRouteImport.update({
   id: '/projects/',
   path: '/projects/',
@@ -35,11 +42,6 @@ const AboutIndexLazyRoute = AboutIndexLazyRouteImport.update({
   path: '/about/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/about/index.lazy').then((d) => d.Route))
-const TimelineIndexRoute = TimelineIndexRouteImport.update({
-  id: '/timeline/',
-  path: '/timeline/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
   id: '/projects/$projectId',
   path: '/projects/$projectId',
@@ -49,45 +51,45 @@ const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/timeline': typeof TimelineIndexRoute
   '/about': typeof AboutIndexLazyRoute
   '/projects': typeof ProjectsIndexLazyRoute
+  '/timeline': typeof TimelineIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/timeline': typeof TimelineIndexRoute
   '/about': typeof AboutIndexLazyRoute
   '/projects': typeof ProjectsIndexLazyRoute
+  '/timeline': typeof TimelineIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
-  '/timeline/': typeof TimelineIndexRoute
   '/about/': typeof AboutIndexLazyRoute
   '/projects/': typeof ProjectsIndexLazyRoute
+  '/timeline/': typeof TimelineIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects/$projectId' | '/timeline' | '/about' | '/projects'
+  fullPaths: '/' | '/projects/$projectId' | '/about' | '/projects' | '/timeline'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects/$projectId' | '/timeline' | '/about' | '/projects'
+  to: '/' | '/projects/$projectId' | '/about' | '/projects' | '/timeline'
   id:
     | '__root__'
     | '/'
     | '/projects/$projectId'
-    | '/timeline/'
     | '/about/'
     | '/projects/'
+    | '/timeline/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
-  TimelineIndexRoute: typeof TimelineIndexRoute
   AboutIndexLazyRoute: typeof AboutIndexLazyRoute
   ProjectsIndexLazyRoute: typeof ProjectsIndexLazyRoute
+  TimelineIndexLazyRoute: typeof TimelineIndexLazyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -97,6 +99,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timeline/': {
+      id: '/timeline/'
+      path: '/timeline'
+      fullPath: '/timeline'
+      preLoaderRoute: typeof TimelineIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/': {
@@ -113,13 +122,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/timeline/': {
-      id: '/timeline/'
-      path: '/timeline'
-      fullPath: '/timeline'
-      preLoaderRoute: typeof TimelineIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projects/$projectId': {
       id: '/projects/$projectId'
       path: '/projects/$projectId'
@@ -133,9 +135,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
-  TimelineIndexRoute: TimelineIndexRoute,
   AboutIndexLazyRoute: AboutIndexLazyRoute,
   ProjectsIndexLazyRoute: ProjectsIndexLazyRoute,
+  TimelineIndexLazyRoute: TimelineIndexLazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

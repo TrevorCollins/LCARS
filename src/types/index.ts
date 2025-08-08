@@ -1,3 +1,9 @@
+export type SkillType = {
+	label: string;
+	percent: number;
+	categories: SkillCat[];
+};
+
 export type JobType = {
 	id: string;
 	company: string;
@@ -7,10 +13,13 @@ export type JobType = {
 	details: string[];
 };
 
-export type SkillType = {
-	label: string;
-	percent: number;
-	categories: SkillCat[];
+export type ProjectType = {
+	id: string;
+	name: string;
+	url: string;
+	repo: string;
+	thumbnail: string;
+	description: string;
 };
 
 export type SkillCat = 'Coding' | 'Design' | 'Teamwork' | 'Frontend' | 'Backend' | 'Testing';

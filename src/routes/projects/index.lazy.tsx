@@ -1,20 +1,16 @@
-import { Link, createLazyFileRoute } from '@tanstack/react-router';
+import { createLazyFileRoute } from '@tanstack/react-router';
+import { projects } from '../../constants';
+import Project from './-components/Project';
 
 export const Route = createLazyFileRoute('/projects/')({
 	component: Projects,
 });
 
 function Projects() {
-	const projects = [
-		{ id: '1', name: 'Project A' },
-		{ id: '2', name: 'Project B' },
-	];
 	return (
-		<div>
+		<div id='projects' className='w-full h-full grid grid-cols-6 lg:grid-cols-12 lg:grid-rows-6 gap-[2dvw]'>
 			{projects.map(project => (
-				<Link key={project.id} to='/projects/$projectId' params={{ projectId: project.id }}>
-					{project.name}
-				</Link>
+				<Project key={project.id} {...project} />
 			))}
 		</div>
 	);

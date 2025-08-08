@@ -5,7 +5,7 @@ const Bio = ({ ...props }) => {
 	return (
 		<Card title='Bio' id='bio' {...props}>
 			<div className='flex flex-col lg:flex-row justify-between gap-4 w-full h-fit'>
-				<img src='/profile.jpeg' alt='Trevor' className='bio__image' />
+				<img src='/images/profile.jpeg' alt='Trevor' className='bio__image' />
 				<div className='bio__info'>
 					<div className='bio__line'>
 						<b>Name</b>
