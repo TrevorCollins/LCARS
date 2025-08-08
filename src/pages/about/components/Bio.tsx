@@ -1,19 +1,15 @@
 import Card from '../../../components/Card';
+import { bioCopy } from '../../../constants';
 
 const Bio = ({ ...props }) => {
 	return (
-		<Card header='Bio' id='bio' {...props}>
-			<div className='flex flex-col xl:flex-row justify-between gap-4 w-full h-1/2'>
+		<Card title='Bio' id='bio' {...props}>
+			<div className='flex flex-col lg:flex-row justify-between gap-4 w-full h-fit'>
 				<img src='/profile.jpeg' alt='Trevor' className='bio__image' />
 				<div className='bio__info'>
 					<div className='bio__line'>
 						<b>Name</b>
 						<p>Trevor Collins</p>
-					</div>
-					<span className='bio__divider' />
-					<div className='bio__line'>
-						<b>Age</b>
-						<p>32</p>
 					</div>
 					<span className='bio__divider' />
 					<div className='bio__line'>
@@ -27,7 +23,7 @@ const Bio = ({ ...props }) => {
 					</div>
 				</div>
 			</div>
-			<div className='w-full h-1/2'>paragraph</div>
+			<div className='w-full h-auto mt-4 tracking-widest text-2xl leading-10'>{bioCopy}</div>
 		</Card>
 	);
 };
