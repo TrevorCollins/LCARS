@@ -31,9 +31,6 @@ export const LCARSBody = () => {
 				<rect width='15.05%' height='60%' x='29.45%' y='94%' className='lcars-obj fill-A/80' />
 				<rect width='6.73%' height='60%' x='22.14%' y='94%' className='lcars-obj fill-C/80' />
 				<rect width='21.56%' height='17.64%' x='0%' y='82.35%' className='lcars-obj fill-B/80' />
-				<rect width='10.42%' height='41.17%' x='0%' y='40.23%' className='lcars-obj fill-B/80' />
-				<rect width='10.42%' height='5.05%' x='0%' y='34.23%' className='lcars-obj fill-C/80' />
-				<rect width='10.42%' height='11.17%' x='0%' y='22.11%' className='lcars-obj fill-A/80' />
 				<rect width='25.76%' height='21.17%' x='0%' y='0%' className='lcars-obj fill-A/80' />
 				<rect width='15.05%' height='8.47%' x='26.34%' y='0%' className='lcars-obj fill-E/80' />
 				<rect width='4.63%' height='8.47%' x='41.97%' y='0%' className='lcars-obj fill-C/80' />

@@ -172,6 +172,12 @@ body {
 	b {
 		@apply font-bold;
 	}
+	nav {
+		@apply absolute left-[0dvw] top-[37dvh] w-[10dvw] h-[46dvh] flex flex-col gap-[1rem] items-center;
+		.nav__link {
+			@apply w-full grow flex justify-center items-center text-white/80 font-bold text-2xl cursor-pointer hover:text-F-50/100 hover:underline transition-all duration-300;
+		}
+	}
 }
 
 .card {
