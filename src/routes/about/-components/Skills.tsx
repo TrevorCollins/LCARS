@@ -4,6 +4,7 @@ import type { SkillCat, SkillType } from '../../../types';
 import { skillCategories, skillsArr, skillSorts } from '../../../constants';
 import { Skill } from './Skill';
 import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
 
 const colorArr = ['A', 'D', 'B', 'E', 'C'];
 
