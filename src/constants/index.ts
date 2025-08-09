@@ -1,5 +1,21 @@
 import type { JobType, ProjectType, SkillType } from '../types';
 
+export const navLinks: { label: string; path: string; id: string; color: string }[] = [
+	{ label: 'Home', path: '/', id: 'home', color: 'E' },
+	{ label: 'About', path: '/about', id: 'about', color: 'B' },
+	{ label: 'History', path: '/timeline', id: 'timeline', color: 'D' },
+	{ label: 'Projects', path: '/projects', id: 'projects', color: 'A' },
+	{ label: 'Contact', path: '/contact', id: 'contact', color: 'C' },
+];
+
+export const navColorClasses: { [color: string]: { bg: string; active: string } } = {
+	A: { bg: 'bg-A/80 hover:bg-A/100', active: 'bg-A/100' },
+	B: { bg: 'bg-B/80 hover:bg-B/100', active: 'bg-B/100' },
+	C: { bg: 'bg-C/80 hover:bg-C/100', active: 'bg-C/100' },
+	D: { bg: 'bg-D/80 hover:bg-D/100', active: 'bg-D/100' },
+	E: { bg: 'bg-E/80 hover:bg-E/100', active: 'bg-E/100' },
+};
+
 export const skillsArr: SkillType[] = [
 	{
 		label: 'JavaScript/TypeScript',

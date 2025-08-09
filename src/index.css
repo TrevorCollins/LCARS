@@ -175,7 +175,22 @@ body {
 	nav {
 		@apply absolute left-[0dvw] top-[37dvh] w-[10dvw] h-[46dvh] flex flex-col gap-[1rem] items-center;
 		.nav__link {
-			@apply w-full grow flex justify-center items-center text-white/80 font-bold text-lg xl:text-2xl cursor-pointer hover:text-F-50/100 hover:underline transition-all duration-300;
+			@apply w-full relative grow flex justify-center items-center text-white/80 font-bold text-lg xl:text-2xl cursor-pointer hover:text-F-50/100 hover:underline transition-all duration-300;
+			.nav__link-child {
+				@apply w-full h-full flex items-center justify-center;
+			}
+			.nav__arrow {
+				position: absolute;
+				top: 0;
+				right: -1rem;
+				width: 1rem;
+				height: 100%;
+				clip-path: polygon(0 0, 0 50%, 0 100%);
+				transition: clip-path 0.3s ease-in-out;
+				&.active {
+					clip-path: polygon(0 0, 100% 50%, 0 100%);
+				}
+			}
 		}
 	}
 }
