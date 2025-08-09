@@ -1,8 +1,5 @@
-import { Canvas, type ThreeElements } from '@react-three/fiber';
-import { useMemo, useRef, type JSX } from 'react';
-import type { ForwardRefComponent } from '@react-three/drei/helpers/ts-utils';
-import { Stars, type StarsProps } from '@react-three/drei';
-import { MathUtils, type Mesh, type Points, Vector3 } from 'three';
+import { Canvas } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
 
 // const Stars: ForwardRefComponent<StarsProps, Points> = () => {
 // 	const stars = Array.from({ length: 1000 }, () => {

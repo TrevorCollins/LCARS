@@ -36,7 +36,7 @@ const Skills = ({ ...props }) => {
 
 	useGSAP(
 		() => {
-			let tl = gsap.timeline();
+			const tl = gsap.timeline();
 			tl.from('skill__container', {
 				autoAlpha: 0,
 				y: -100,
