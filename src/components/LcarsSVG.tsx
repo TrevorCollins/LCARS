@@ -18,7 +18,7 @@ export const LCARSBody = () => {
 	const sonorWidth = 15;
 	const blipWidth = sonorWidth / (numOfBlips * 2 - 1);
 	return (
-		<svg className='fill-none w-full h-full' viewBox='0 0 1000 1000' preserveAspectRatio='none'>
+		<svg className='fill-none w-full h-full z-50' viewBox='0 0 1000 1000' preserveAspectRatio='none'>
 			<mask id='lcars_body' width='100%' height='100%' x={0} y={0} maskUnits='userSpaceOnUse' className='mask-type-alpha'>
 				<path
 					className='fill-black'

@@ -64,8 +64,8 @@ function App() {
 			'main',
 			{
 				autoAlpha: 0,
-				scaleY: 0,
-				scaleX: 0.5,
+				xPercent: -50,
+				ease: 'power4.in',
 				duration: 0.5,
 			},
 			'<'
