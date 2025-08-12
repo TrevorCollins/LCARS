@@ -39,7 +39,7 @@ function Contact() {
 			const { name, email, company, message } = data;
 			const payload = { name, email, company, message };
 
-			await fetch('/api/emails/route.ts', {
+			await fetch('/api/email.ts', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(payload),
