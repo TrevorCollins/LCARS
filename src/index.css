@@ -44,6 +44,36 @@
 
 @import 'tailwindcss';
 
+@view-transition {
+	navigation: auto;
+}
+
+::view-transition-group(main-content) {
+	animation-duration: 1000ms;
+}
+
+::view-transition-old(main-content) {
+	animation-name: slide-left;
+}
+::view-transition-new(main-content) {
+	animation-name: slide-right;
+}
+
+@keyframes slide-right {
+	from {
+		translate: -100% 0;
+		transform: scale(0.5);
+		opacity: 0;
+	}
+}
+@keyframes slide-left {
+	to {
+		translate: -100% 0;
+		transform: scale(0.5);
+		opacity: 0;
+	}
+}
+
 @theme {
 	/* LCARS color */
 	--A-hue: 21.5;
@@ -189,6 +219,43 @@ body {
 				transition: clip-path 0.3s ease-in-out;
 				&.active {
 					clip-path: polygon(0 0, 100% 50%, 0 100%);
+				}
+			}
+		}
+	}
+	main {
+		@apply absolute top-[28dvh] right-[2dvw] w-[82dvw] h-[63dvh] max-h-[63dvh] flex flex-row gap-[2dvw] overflow-hidden;
+		view-transition-name: main-content;
+	}
+
+	form {
+		@apply w-full h-full grid grid-cols-2 gap-8 justify-between items-start;
+		.contact__inputs {
+			@apply w-full h-full flex flex-col justify-between;
+			.contact__group {
+				@apply justify-center first:justify-start last:justify-end;
+			}
+		}
+		.contact__area {
+			@apply w-full h-full;
+			textarea {
+				@apply h-full;
+			}
+		}
+		.contact__group {
+			@apply w-full h-full flex flex-col gap-2 col-span-2 lg:col-span-1;
+			input,
+			textarea {
+				@apply w-full py-1 px-2 border-2 border-F/20 bg-F/10 focus:outline-none;
+
+				&:user-valid {
+					@apply border-F-200/50;
+				}
+				&:user-invalid {
+					@apply border-A-200/50;
+				}
+				&:focus:invalid {
+					@apply border-B-200/50;
 				}
 			}
 		}

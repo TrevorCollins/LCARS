@@ -1,51 +1,45 @@
-import { Canvas } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useRef } from 'react';
+import { Vector3 } from 'three';
+import { Points, Point, PositionPoint } from '@react-three/drei';
 
-// const Stars: ForwardRefComponent<StarsProps, Points> = () => {
-// 	const stars = Array.from({ length: 1000 }, () => {
-// 		let x, y, z;
-// 		x = MathUtils.randFloatSpread(600);
-// 		y = MathUtils.randFloatSpread(600);
-// 		z = MathUtils.randFloatSpread(600);
-// 		return new Vector3(x, y, z);
-// 	});
-// 	return (
-// 		<>
-// 			{stars.map((star, idx) => {
-// 				<Star key={idx} position={star} />;
-// 			})}
-// 		</>
-// 	);
-// };
+const Stars = () => {
+	const numStars = (window.innerWidth * window.innerHeight) / 3000; // Adjust density based on screen size
+	const stars = Array.from({ length: numStars }, () => {
+		const x = Math.floor(Math.random() * 800 - 400) + 200;
+		const y = Math.floor(Math.random() * 800 - 400) + 200;
+		const z = Math.floor(Math.random() * 800 - 400);
+		return new Vector3(x, y, z);
+	});
+	return stars.map((star, idx) => <Star key={idx} position={star} idx={idx} />);
+};
 
-// const Star = (props: ThreeElements['mesh']) => {
-// 	const starRef = useRef<Mesh>(null);
-// 	return (
-// 		<points>
-// 			<bufferGeometry>
-// 				<bufferAttribute args={[props.position, 3]} />
-// 			</bufferGeometry>
-// 		</points>
-// 	);
-// };
-
-// const Scene = () => {
-// 	return (
-// 		<>
-// 			<ambientLight intensity={0.5} />
-// 			<fog attach='fog' args={['black', 700, 900]} />
-// 			<Stars />
-// 		</>
-// 	);
-// };
+export const Star = ({ position }: { position: Vector3; idx: number }) => {
+	const pointRef = useRef<PositionPoint>(null);
+	useFrame(() => {
+		if (!pointRef.current) return;
+		const point = pointRef.current;
+		const pos = point.position.z;
+		if (pos < -400) {
+			point.translateZ(800);
+		}
+		point.translateZ(-2);
+	});
+	return (
+		<Points>
+			<pointsMaterial color='#fae9b2' />
+			<Point ref={pointRef} position={[position.x, position.y, position.z]} />
+		</Points>
+	);
+};
 
 const Space = () => {
-	const numOfStars = 1000;
-
 	return (
 		<div className='w-full h-full fixed top-0 left-0'>
-			<Canvas camera={{ position: [0, 0, -1], rotateX: Math.PI / 2, fov: 60 }}>
-				<Stars saturation={0} count={numOfStars} speed={0.5} />
+			<Canvas camera={{ position: [0, 0, -400], rotateX: Math.PI / 2, fov: 60 }}>
+				<ambientLight intensity={1} />
+				<fog attach='fog' args={['black', 300, 400]} />
+				<Stars />
 			</Canvas>
 		</div>
 	);

@@ -227,3 +227,16 @@ export const projects: ProjectType[] = [
 		description: 'The site you are on right now!',
 	},
 ];
+
+export const socialLinks = [
+	{
+		url: 'https://github.com/TrevorCollins',
+		title: 'Github',
+		icon: '/images/github.png',
+	},
+	{
+		url: 'www.linkedin.com/in/trevor50d',
+		title: 'LinkedIn',
+		icon: '/images/linkedin.png',
+	},
+];

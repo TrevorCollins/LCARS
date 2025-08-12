@@ -1,7 +1,20 @@
 import { Link } from '@tanstack/react-router';
 import { navColorClasses, navLinks } from '../constants';
+// import { Flip } from 'gsap/Flip';
+// import gsap from 'gsap';
 
 const NavCon = () => {
+	// function flipSection() {
+	// 	const state = Flip.getState('section');
+	// 	Flip.from(state, {
+	// 		duration: 0.5,
+	// 		ease: 'power2.inOut',
+	// 		stagger: 0.5,
+	// 		absolute: true,
+	// 		onEnter: elements => gsap.fromTo(elements, { autoAlpha: 0 }, { autoAlpha: 1 }),
+	// 		onLeave: elements => gsap.to(elements, { autoAlpha: 0 }),
+	// 	});
+	// }
 	return (
 		<nav>
 			{navLinks.map(({ id, path, label, color }) => (

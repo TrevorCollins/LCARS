@@ -1,5 +1,4 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import Space from '../components/Space';
 import Header from '../components/Header';
 import { LCARSBody } from '../components/LcarsSVG';
@@ -7,8 +6,9 @@ import NavCon from '../components/NavCon';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import { Flip } from 'gsap/Flip';
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(Flip, SplitText);
 
 export const Route = createRootRoute({
 	component: App,
@@ -79,12 +79,11 @@ function App() {
 				<div className='w-full h-[80dvh] pt-4'>
 					<LCARSBody />
 					<NavCon />
-					<main className='absolute top-[28dvh] right-[2dvw] w-[82dvw] h-[63dvh] max-h-[63dvh] flex flex-row gap-[2dvw] overflow-hidden'>
+					<main className='main-content'>
 						<Outlet />
 					</main>
 				</div>
 			</div>
-			<TanStackRouterDevtools />
 		</>
 	);
 }
