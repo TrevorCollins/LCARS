@@ -39,7 +39,7 @@ function Contact() {
 			const { name, email, company, message } = data;
 			const payload = { name, email, company, message };
 
-			await fetch('/api/email.ts', {
+			await fetch('/src/api/email.ts', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(payload),
@@ -49,7 +49,6 @@ function Contact() {
 			setError('root', { message: 'Failed to send message. Please try again later.' });
 		} finally {
 			setSent(true);
-			alert('Message sent! I will get back to you as soon as I can.');
 		}
 	};
 	return (

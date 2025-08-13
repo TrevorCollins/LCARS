@@ -1,8 +1,10 @@
+'use server';
+
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend'; // You might need to install resend
 
 // Ensure RESEND_API_KEY is set as a Vercel Environment Variable
-const resendApiKey = process.env.RESEND_API_KEY;
+const resendApiKey = import.meta.env.VITE_RESEND_API_KEY;
 
 if (!resendApiKey) {
 	console.error('RESEND_API_KEY is not set');
