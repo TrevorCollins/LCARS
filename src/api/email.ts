@@ -13,7 +13,7 @@ if (!resendApiKey) {
 
 const resend = new Resend(resendApiKey);
 
-export default async function handler(request: VercelRequest, response: VercelResponse) {
+export default async function POST(request: VercelRequest, response: VercelResponse) {
 	// Recommended: Check for POST method
 	if (request.method !== 'POST') {
 		return response.status(405).json({ message: 'Method Not Allowed' });
